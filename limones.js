@@ -12,8 +12,10 @@ let limonX=canvas.width/2;
 let limonY=0;
 let puntaje=0;
 let vidas=3;
+let velocidadCaida=100;
 
 function dibujarIniciar(){
+    setInterval(bajarLimon,velocidadCaida);//la funcion setInterval recibe dos parametros una funcion y el tiempo en milisegundos
     dibujarSuelo();
     dibujarPersonaje();
     aparecerLimon();
@@ -74,6 +76,9 @@ function detectarPiso(){
          aparecerLimon();
          vidas=vidas-1;
         mostrarEnSpan("txtVidas",vidas);
+        if (vidas==0){
+            alert("GAME OVER");
+        }
     }
 }
 
