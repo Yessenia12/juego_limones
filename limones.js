@@ -12,7 +12,8 @@ let limonX=canvas.width/2;
 let limonY=0;
 let puntaje=0;
 let vidas=3;
-let velocidadCaida=100;
+let velocidadCaida=200;
+
 
 function dibujarIniciar(){
     setInterval(bajarLimon,velocidadCaida);//la funcion setInterval recibe dos parametros una funcion y el tiempo en milisegundos
@@ -68,6 +69,13 @@ function detectarAtrapada(){
         aparecerLimon();
         puntaje=puntaje+1;
         mostrarEnSpan("txtPuntaje",puntaje);
+        if (puntaje === 3) {
+        velocidadCaida = 150;
+    } else if (puntaje === 6) {
+        velocidadCaida = 100;
+    } else if (puntaje === 10) {
+            alert("AHORA QUE TIENES LOS LIMONES, DAME UNA LIMONADA");
+        }
     }
 
 }
