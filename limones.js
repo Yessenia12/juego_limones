@@ -104,7 +104,7 @@ function reiniciar(){
     vidas=3;
     velocidadCaida=200;
     mostrarEnSpan("txtPuntaje",puntaje);
-     mostrarEnSpan("txtVidas",vidas);
+    mostrarEnSpan("txtVidas",vidas);
     limonX=generarAleatorio(0,canvas.width-ANCHO_LIMON);
     dibujarIniciar();
 }
