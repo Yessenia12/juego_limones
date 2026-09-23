@@ -16,6 +16,7 @@ let velocidadCaida=200;
 let intervalo;
 
 function dibujarIniciar(){
+    clearInterval(intervalo); 
     intervalo=setInterval(bajarLimon,velocidadCaida);//la funcion setInterval recibe dos parametros una funcion y el tiempo en milisegundos
     dibujarSuelo();
     dibujarPersonaje();
@@ -97,4 +98,13 @@ function aparecerLimon(){
     limonX=generarAleatorio(0,canvas.width-ANCHO_LIMON);
     limonY=0;
     actualizarPantalla();
+}
+function reiniciar(){
+    puntaje=0;
+    vidas=3;
+    velocidadCaida=200;
+    mostrarEnSpan("txtPuntaje",puntaje);
+     mostrarEnSpan("txtVidas",vidas);
+    limonX=generarAleatorio(0,canvas.width-ANCHO_LIMON);
+    dibujarIniciar();
 }
