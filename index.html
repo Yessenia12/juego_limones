@@ -3,33 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atrapar Limones</title>
+  <title>Atrapar Limones - Aventura</title>
   <link rel="stylesheet" href="limones.css">
   <script src="utils.js"></script>
 </head>
 
 <body onload="dibujarIniciar()">
+  <div class="fondo-circulo circulo-1"></div>
+  <div class="fondo-circulo circulo-2"></div>
+
   <div class="contenedor">
+    <div class="imagen-superior">
+      <img src="sinsajo.png" alt="Ave azul">
+    </div>
+
     <header class="encabezado">
-      <div class="icono">🍋</div>
+      <div class="insignia">★</div>
+
       <div>
-        <h1>Atrapar Limones</h1>
-        <p>Si del cielo te caen limones, ¡a hacer limonada aprendes!</p>
+        <div class="tipo-juego">⚡ AVENTURA DE LIMONES ⚡</div>
+        <h1>ATRAPAR LIMONES</h1>
+        <p>¡Atrapa todos los limones y conviértete en el campeón!</p>
       </div>
     </header>
 
-    <h2>Autor: Yessenia Quinatoa</h2>
+    <div class="tarjeta-entrenador">
+      <span>🎒 ENTRENADOR</span>
+      <strong>Yessenia Quinatoa</strong>
+    </div>
 
     <section class="zona-juego">
-      <div class="etiqueta-juego">🍋 ¡Atrapa los limones! 🍋</div>
+      <div class="etiqueta-juego">
+        <span class="pokebola-mini"></span>
+        ¡COMIENZA LA AVENTURA!
+      </div>
+
       <canvas id="areaJuego" width="600" height="400"></canvas>
     </section>
 
     <div class="panel">
       <div class="marcador">
-        <span class="marcador-icono">🏆</span>
+        <div class="icono-marcador">🏆</div>
         <div>
-          <span class="marcador-titulo">Puntaje</span>
+          <span class="marcador-titulo">PUNTOS</span>
           <span id="txtPuntaje">0</span>
         </div>
       </div>
@@ -37,9 +53,9 @@
       <div class="separador"></div>
 
       <div class="marcador">
-        <span class="marcador-icono">❤️</span>
+        <div class="icono-marcador">❤️</div>
         <div>
-          <span class="marcador-titulo">Vidas</span>
+          <span class="marcador-titulo">VIDAS</span>
           <span id="txtVidas">3</span>
         </div>
       </div>
@@ -47,17 +63,21 @@
 
     <div class="botones">
       <button type="button" onclick="moverIzquierda();" class="btn btn-mover">
-        ◀ Izquierda
+        ◀ IZQUIERDA
       </button>
+
       <button type="button" onclick="moverDerecha();" class="btn btn-mover">
-        Derecha ▶
+        DERECHA ▶
       </button>
+
       <button type="button" onclick="reiniciar();" class="btn btn-reiniciar">
-        ↻ Reiniciar
+        ↻ NUEVA PARTIDA
       </button>
     </div>
 
-    <footer>🍋 ¡Buena suerte y atrapa todos los limones! 🍋</footer>
+    <footer>
+      ⚡ ¡Atrapa, consigue puntos y completa tu aventura! ⚡
+    </footer>
   </div>
 
   <script src="limones.js"></script>

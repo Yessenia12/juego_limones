@@ -3,231 +3,332 @@
 }
 
 body {
-  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
-  background:
-    radial-gradient(circle at 15% 20%, rgba(255, 235, 59, 0.18), transparent 25%),
-    radial-gradient(circle at 85% 80%, rgba(76, 175, 80, 0.18), transparent 28%),
-    linear-gradient(135deg, #102a1b 0%, #173d24 48%, #0b2115 100%);
-  color: #fff;
-  text-align: center;
   margin: 0;
-  padding: 35px 20px;
   min-height: 100vh;
+  padding: 35px 20px;
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  text-align: center;
+  color: #252525;
+  overflow-x: hidden;
+  background:
+    linear-gradient(135deg, #e8f5ff 0%, #bfe7ff 45%, #fff1a8 100%);
+}
+
+/* Formas decorativas del fondo */
+.fondo-circulo {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+.circulo-1 {
+  width: 280px;
+  height: 280px;
+  top: -90px;
+  left: -80px;
+  background: #ffcc00;
+}
+
+.circulo-2 {
+  width: 330px;
+  height: 330px;
+  right: -120px;
+  bottom: -120px;
+  background: #36a9e1;
 }
 
 .contenedor {
+  position: relative;
+  z-index: 1;
   width: min(900px, 100%);
   margin: 0 auto;
-  padding: 30px;
-  background: rgba(12, 28, 18, 0.86);
-  border: 1px solid rgba(255, 235, 59, 0.22);
+  padding: 28px;
+  background: #ffffff;
+  border: 5px solid #303030;
   border-radius: 28px;
   box-shadow:
-    0 25px 70px rgba(0, 0, 0, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(10px);
+    0 12px 0 #303030,
+    0 25px 45px rgba(25, 66, 90, 0.28);
 }
 
+/* Imagen superior */
+.imagen-superior {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -5px auto 12px;
+}
+
+.imagen-superior img {
+  display: block;
+  width: min(300px, 70%);
+  height: auto;
+  max-height: 150px;
+  object-fit: contain;
+  border-radius: 18px;
+}
+
+@media (max-width: 650px) {
+  .imagen-superior img {
+    width: min(240px, 75%);
+    max-height: 120px;
+  }
+}
+
+/* Encabezado */
 .encabezado {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 18px;
-  margin-bottom: 8px;
 }
 
-.icono {
-  width: 64px;
-  height: 64px;
+.insignia {
+  width: 72px;
+  height: 72px;
   display: grid;
   place-items: center;
-  font-size: 38px;
-  background: linear-gradient(145deg, #f9e93d, #d8b900);
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(230, 198, 20, 0.28);
-  transform: rotate(-7deg);
+  color: #fff;
+  font-size: 42px;
+  font-weight: 900;
+  background: linear-gradient(145deg, #ffdc20, #ef9e00);
+  border: 5px solid #303030;
+  border-radius: 50%;
+  box-shadow: 0 5px 0 #303030;
+  transform: rotate(-8deg);
+}
+
+.tipo-juego {
+  color: #e64635;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
 }
 
 h1 {
   margin: 0;
-  color: #f8df32;
+  color: #1d67a8;
   font-size: clamp(2.2rem, 6vw, 3.6rem);
-  line-height: 1;
-  letter-spacing: -1px;
-  text-shadow: 0 4px 18px rgba(248, 223, 50, 0.18);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: 1px;
+  text-shadow:
+    3px 3px 0 #ffcc00,
+    5px 5px 0 #303030;
 }
 
 .encabezado p {
-  margin: 10px 0 0;
-  color: #d5e7d8;
-  font-size: 1rem;
-}
-
-h2 {
-  margin: 16px 0 24px;
-  color: #a9c7ad;
+  margin: 13px 0 0;
+  color: #53656d;
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 
+/* Tarjeta de entrenador */
+.tarjeta-entrenador {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 22px auto;
+  padding: 9px 17px;
+  color: #fff;
+  background: #e64635;
+  border: 3px solid #303030;
+  border-radius: 999px;
+  box-shadow: 0 4px 0 #303030;
+  font-size: 0.78rem;
+}
+
+.tarjeta-entrenador span {
+  font-weight: 900;
+  opacity: 0.9;
+}
+
+.tarjeta-entrenador strong {
+  color: #ffeb72;
+}
+
+/* Zona de juego */
 .zona-juego {
   position: relative;
-  padding: 15px;
-  background: linear-gradient(145deg, #102719, #07160d);
-  border: 2px solid rgba(248, 223, 50, 0.5);
+  padding: 18px;
+  background: #dff5ff;
+  border: 5px solid #303030;
   border-radius: 22px;
-  box-shadow:
-    0 14px 35px rgba(0, 0, 0, 0.35),
-    inset 0 0 25px rgba(111, 180, 83, 0.06);
+  box-shadow: inset 0 0 0 5px #52b8df;
 }
 
 .etiqueta-juego {
   position: absolute;
   z-index: 2;
-  top: 25px;
+  top: 28px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 7px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 17px;
+  color: #fff;
+  background: #e64635;
+  border: 3px solid #303030;
   border-radius: 999px;
-  background: rgba(8, 24, 14, 0.82);
-  border: 1px solid rgba(248, 223, 50, 0.35);
-  color: #f6e76a;
-  font-size: 0.82rem;
-  font-weight: bold;
-  letter-spacing: 0.4px;
+  font-size: 0.75rem;
+  font-weight: 900;
+  white-space: nowrap;
+  box-shadow: 0 4px 0 #303030;
   pointer-events: none;
 }
 
+.pokebola-mini {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  border: 2px solid #303030;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #ef5350 0 45%, #303030 45% 58%, #fff 58%);
+}
+
 canvas {
+  display: block;
   width: 100%;
   max-width: 600px;
   height: auto;
-  background:
-    linear-gradient(rgba(20, 54, 29, 0.25), rgba(4, 16, 9, 0.35)),
-    #111f16;
-  border: 3px solid #f8df32;
-  border-radius: 14px;
-  display: block;
   margin: 0 auto;
-  box-shadow:
-    0 0 0 5px rgba(248, 223, 50, 0.06),
-    0 12px 30px rgba(0, 0, 0, 0.4);
+  background: #c8eff8;
+  border: 5px solid #303030;
+  border-radius: 13px;
+  box-shadow: 0 6px 0 #227ca8;
 }
 
+/* Marcador */
 .panel {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 34px;
-  width: min(560px, 100%);
-  margin: 25px auto 20px;
-  padding: 16px 25px;
-  background: rgba(255, 255, 255, 0.055);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  align-items: center;
+  gap: 38px;
+  width: min(570px, 100%);
+  margin: 26px auto 20px;
+  padding: 15px 25px;
+  background: #f8f8f8;
+  border: 4px solid #303030;
   border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 5px 0 #303030;
 }
 
 .marcador {
   display: flex;
   align-items: center;
   gap: 12px;
-  min-width: 135px;
+  min-width: 145px;
   text-align: left;
 }
 
-.marcador-icono {
-  font-size: 30px;
+.icono-marcador {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  background: #ffdc20;
+  border: 3px solid #303030;
+  border-radius: 50%;
+  font-size: 22px;
 }
 
-.marcador div {
+.marcador div:last-child {
   display: flex;
   flex-direction: column;
 }
 
 .marcador-titulo {
-  color: #9dbba2;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: bold;
+  color: #65747a;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
 }
 
 #txtPuntaje,
 #txtVidas {
-  color: #fff;
-  font-size: 1.6rem;
-  font-weight: 800;
+  font-size: 1.7rem;
+  font-weight: 900;
   line-height: 1.1;
 }
 
 #txtPuntaje {
-  color: #f8df32;
+  color: #e6a900;
 }
 
 #txtVidas {
-  color: #ff7272;
+  color: #e64635;
 }
 
 .separador {
-  width: 1px;
+  width: 4px;
   height: 45px;
-  background: rgba(255, 255, 255, 0.16);
+  background: #303030;
+  border-radius: 4px;
 }
 
+/* Botones */
 .botones {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 12px;
+  gap: 13px;
 }
 
 .btn {
-  border: none;
-  border-radius: 12px;
-  padding: 13px 22px;
-  color: #122017;
+  min-width: 145px;
+  padding: 13px 20px;
+  border: 4px solid #303030;
+  border-radius: 13px;
+  color: #fff;
   font-family: inherit;
-  font-size: 0.95rem;
-  font-weight: 800;
+  font-size: 0.85rem;
+  font-weight: 900;
   cursor: pointer;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+  box-shadow: 0 5px 0 #303030;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
 .btn:hover {
   transform: translateY(-3px);
-  filter: brightness(1.08);
+  box-shadow: 0 8px 0 #303030;
 }
 
 .btn:active {
-  transform: translateY(0);
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #303030;
 }
 
 .btn-mover {
-  background: linear-gradient(135deg, #f8e83c, #d8bd20);
-  box-shadow: 0 7px 18px rgba(235, 210, 35, 0.2);
+  background: #1d8fcb;
 }
 
 .btn-reiniciar {
-  background: linear-gradient(135deg, #91d49a, #4caf68);
-  box-shadow: 0 7px 18px rgba(76, 175, 104, 0.2);
+  background: #e64635;
 }
 
 footer {
-  margin-top: 24px;
-  color: #78977e;
-  font-size: 0.8rem;
+  margin-top: 25px;
+  color: #65747a;
+  font-size: 0.78rem;
+  font-weight: 800;
 }
 
+/* Celulares */
 @media (max-width: 650px) {
   body {
-    padding: 15px 10px;
+    padding: 15px 9px;
   }
 
   .contenedor {
-    padding: 22px 15px;
-    border-radius: 20px;
+    padding: 21px 13px;
+    border-width: 4px;
+    border-radius: 21px;
+    box-shadow: 0 8px 0 #303030;
   }
 
   .encabezado {
@@ -235,13 +336,19 @@ footer {
     gap: 12px;
   }
 
+  .insignia {
+    width: 58px;
+    height: 58px;
+    font-size: 32px;
+  }
+
   h1 {
-    font-size: 2.3rem;
+    font-size: 2.25rem;
   }
 
   .panel {
-    gap: 18px;
-    padding: 14px 10px;
+    gap: 15px;
+    padding: 13px 8px;
   }
 
   .marcador {
@@ -253,7 +360,7 @@ footer {
   }
 
   .etiqueta-juego {
-    font-size: 0.72rem;
+    font-size: 0.65rem;
     padding: 6px 10px;
   }
 
